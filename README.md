@@ -457,7 +457,7 @@ __**Nota**:_ las pruebas del ejercicio opcional están comentadas para evitar er
 ## Entrega de la práctica
 
 
-Para entregar la práctica, se deberá subir a Moodle el fichero ```solucion_p1.py```, conteniendo todas las funciones requeridas en la práctica. La práctica se estar entregada en Moodle antes de las 23:59 del **Viernes 12 de Noviembre**.
+Para entregar la práctica, se deberá subir a Moodle en <a href="https://moodle.upm.es/titulaciones/oficiales/mod/assign/view.php?id=208687">este enlace</a> el fichero ```solucion_p1.py```, conteniendo todas las funciones requeridas en la práctica. La práctica se estar entregada en Moodle antes de las 23:59 del **Viernes 12 de Noviembre**.
 
 </br>
 </br>
