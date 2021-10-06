@@ -64,7 +64,7 @@ Esto es código python
 Finalmente, habrá código de ejemplo a guardar en un fichero de texto:
 
 ```python
-def funcion(argumento):
+def funcion(parametro):
    return
 ```
 
@@ -93,8 +93,29 @@ En particular, veremos las siguientes funciones:
 -   Cifrado de mensajes de texto
 -   Lista de la compra
 
-El primer paso para desarrollar la práctica es descargar los ficheros necesarios del repositorio de Github. El método más sencillo es a través del botón ```Code->Download ZIP```. Los dos ficheros necesarios para la práctica son ```solucion.py``` y ```test.py```.
-Las funciones desarrolladas deben estar contenidas en un fichero python con el nombre ```solucion.py``` (que será el fichero que se debe entregar en Moodle). Este fichero (vacío) se puede descargar del repositorio Github de la práctica. Para su edición, se puede usar cualquier IDE, aunque se recomienda Visual Studio Code. El fichero ```test.py``` se puede usar opcionalmente para comprobar que las funciones desarrolladas en la práctica funcionan correctamente, como se explicará más adelante.
+El primer paso para desarrollar la práctica es descargar los ficheros necesarios del repositorio de Github. El método más sencillo es a través del botón ```Code->Download ZIP```. Los dos ficheros necesarios para la práctica son ```solucion_p1.py``` y ```test.py```.
+Las funciones desarrolladas deben estar contenidas en un fichero python con el nombre ```solucion_p1.py``` (que será el fichero que se debe entregar en Moodle). Este fichero se puede descargar del repositorio Github de la práctica. Verá que el fichero contiene lo siguiente:
+
+```python
+EURO_BITCOIN_RATE = 44471.78
+
+def sumar_numeros(num1, num2):
+    '''Suma los dos numeros proporcionados.'''
+    suma = num1 + num2
+    return suma
+
+def euros_a_bitcoins(euros):
+  '''Convierte una cantidad de euros a bitcoins. 1 bitcoin = 44570.17 €'''
+  raise NotImplementedError
+
+def bitcoins_a_euros(usd):
+  '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
+  raise NotImplementedError
+```
+
+Por un lado, define el ratio de conversión de euro a bitcoins. Además, contiene la función de prueba ```sumar_numeros```, que toma como parámetros dos números y devuelve la suma. Por último, contiene el esqueleto de dos de las funciones a desarrollar en esta práctica.
+
+Para su edición, se puede usar cualquier IDE, aunque se recomienda Visual Studio Code. El fichero ```test.py``` se puede usar opcionalmente para comprobar que las funciones desarrolladas en la práctica funcionan correctamente, como se explicará más adelante.
 
 Para cada una de estas funcionalidades se proporcionará la firma (esqueleto) de la función a cumplir.
 Por ejemplo, para una funcionalidad como "elevar un número al cuadrado" podría proporcionarse el siguiente código:
@@ -119,7 +140,7 @@ Finalmente, crearemos un programa con un menú interactivo que permitirá a los 
 
 ## Actividades de la práctica
 
-### Conversor de criptomonedas
+### 1. Conversor de criptomonedas
 
 La primera tarea es muy sencilla: escribir una función que permita convertir de euros a bitcoins, y otra que haga el proceso inverso.
 
@@ -144,11 +165,11 @@ Un ejemplo de uso sería el siguiente:
 89140.34
 ```
 
-Recuerde que para probar el código en el intérprete de Python, debemos importar el fichero donde definimos las funciones escribiendo en el intérprete ```from solucion import *``` (suponiendo que accedemos al intérprete desde el mismo directorio en el que tenemos el fichero ```solucion.py```).
+Recuerde que para probar el código en el intérprete de Python, debemos importar el fichero donde definimos las funciones escribiendo en el intérprete ```from solucion import *``` (suponiendo que accedemos al intérprete desde el mismo directorio en el que tenemos el fichero ```solucion_p1.py```).
 
 _**Nota**: El valor de las criptomonedas fluctúa enormemente. Por simplicidad en la corrección, tome como valor de conversión 1 bitcoin = 44570.17 € (aunque no sea el valor real en el momento en el que realice la práctica). El resultado se redondea a 2 decimales. Véase la función ```round```<sup>[2](#round)</sup>._
 
-### Contador de vocales
+### 2. Contador de vocales
 
 La siguiente funcionalidad es un contador de vocales, es decir, una función que permita obtener el número total de vocales que tiene un texto. 
 
@@ -173,7 +194,7 @@ Como ejemplo de uso:
 1
 ```
 
-### Detector de palíndromos
+### 3. Detector de palíndromos
 A continuación, se pide desarrollar una función que sea capaz de detectar si una palabra o frase es o no un palíndromo. Un palíndromo es una palabra o frase que se lee igual en un sentido que en otro (por ejemplo; Ana, rayar, kayak, 2002).
 
 Para comprobar si una frase es palíndromo, se pueden eliminar los espacios con la función ```replace```<sup>[4](#replace)</sup>.
@@ -195,7 +216,7 @@ True
 False
 ```
 
-### Detector de máximos de temperaturas
+### 4. Detector de máximos de temperaturas
 El objetivo de esta tarea se pide desarrollar una función que sea capaz de obtener las temperaturas que superan cierto umbral. Para ello, la función recibirá como argumentos un listado de temperaturas y el umbral a comprobar.
 
 La función debe cumplir la siguiente especificación:
@@ -215,7 +236,7 @@ Un ejemplo de uso sería el siguiente:
 []
 ```
 
-### Cifrado de texto (opcional)
+### 5. Cifrado de texto (opcional)
 En este apartado **opcional** escribiremos un sistema para intercambiar mensajes cifrados, utilizando uno de los sistemas más simples, el cifrado César<sup>[5](#cesar)</sup>.
 Este sistema de cifrado reemplaza cada una de las letras de un texto por otra que se encuentra a uns distancia dada en el alfabeto.
 Por simplicidad, sólo se tendrán en cuenta las letras de la A a la Z, y todo el texto será convertido a mayúsculas.
@@ -257,7 +278,7 @@ def descifrar(cifrado, desplazamiento):
 
 _**Nota**: En el intérprete, la variable "```_```" (barra baja o underscore) guarda el resultado de la última ejecución._
 
-### Lista de la compra
+### 6. Lista de la compra
 
 En esta parte crearemos una versión muy simplificada de una lista de la compra, y veremos algunas operaciones básicas: añadir y borrar productos, comprobar el número de productos existentes y mostrar todos los productos.
 
@@ -304,7 +325,7 @@ No hay productos
 0
 ```
 
-### Menú de selección
+### 7. Menú de selección
 
 En este apartado vamos a crear un menú interactivo para que el usuario pueda utilizar las funcionalidades implementadas.
 Este menú aceptará órdenes línea a línea, de una forma muy parecida al comportamiento del intérprete de Python.
@@ -370,7 +391,7 @@ _**Nota**: En esta práctica no hace falta tener en cuenta errores por parte del
 
 ## Evaluación
 En esta tarea se incluye un fichero de pruebas llamado ```test.py```.
-Su uso es opcional, pero muy recomendado, ya que permite comprobar de una manera estructurada si las funcionalidades pedidas se han implementado. Para que las pruebas se ejecuten correctamente, el fichero de la solución debe tener el nombre ```solucion.py``` y estar alojado en la misma carpeta que el fichero de pruebas ```test.py```.
+Su uso es opcional, pero muy recomendado, ya que permite comprobar de una manera estructurada si las funcionalidades pedidas se han implementado. Para que las pruebas se ejecuten correctamente, el fichero de la solución debe tener el nombre ```solucion_p1.py``` y estar alojado en la misma carpeta que el fichero de pruebas ```test.py```.
 
 Los tests pueden lanzarse en cualquier momento en la línea de comando.
 Si todo está bien implementado, debería obtenerse un resultado parecido a este:
@@ -436,7 +457,7 @@ __**Nota**:_ las pruebas del ejercicio opcional están comentadas para evitar er
 ## Entrega de la práctica
 
 
-Para entregar la práctica, se deberá subir a Moodle el fichero ```solucion.py```, conteniendo todas las funciones requeridas en la práctica. La práctica se estar entregada en Moodle antes de las 23:59 del día **FECHA DE ENTREGA**.
+Para entregar la práctica, se deberá subir a Moodle el fichero ```solucion_p1.py```, conteniendo todas las funciones requeridas en la práctica. La práctica se estar entregada en Moodle antes de las 23:59 del **Viernes 12 de Noviembre**.
 
 </br>
 </br>

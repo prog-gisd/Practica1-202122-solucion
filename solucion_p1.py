@@ -1,5 +1,3 @@
-import string
-
 RATE = 44471.78
 
 def euros_a_bitcoins(euros):

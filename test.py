@@ -3,7 +3,7 @@ import sys
 import io
 from contextlib import contextmanager
 
-from solucion import *
+from solucion_p1 import *
 
 
 @contextmanager
